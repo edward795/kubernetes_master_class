@@ -1,0 +1,11 @@
+# Use the official NGINX image
+FROM nginx:alpine
+
+# Remove default NGINX website
+RUN rm -rf /usr/share/nginx/html/*
+
+
+# Expose port 80
+EXPOSE 8080
+
+# NGINX runs automatically via base image

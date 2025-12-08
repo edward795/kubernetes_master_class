@@ -1,3 +1,4 @@
 FROM ubuntu 
-ENTRYPOINT [ "/bin/echo" ]
-CMD ["hello"," world"]
+RUN apt-get install service
+EXPOSE 9324
+CMD ["service"]
