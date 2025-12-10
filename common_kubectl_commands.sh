@@ -13,3 +13,9 @@ kubectl api-resources
 kubectl run <podname> --image=<image_name> --dry-run=client -o yaml
 kubectl exec -it <multi-container-pod-name> -c <exec_into_container> -- bash
 kubectl explain pod.spec.containers 
+kubectl get pods -l env=dev
+kubectl label pod pod1 env=dev
+kubectl label pod pod1 env-
+kubectl get pods --show-labels
+kubetcl label pod --all status=running
+kubectl delete pods --all
