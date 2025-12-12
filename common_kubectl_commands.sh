@@ -19,3 +19,15 @@ kubectl label pod pod1 env-
 kubectl get pods --show-labels
 kubetcl label pod --all status=running
 kubectl delete pods --all
+
+#ReplicaSet
+kubectl scale replicaset <replicaset-name> --replicas=<replicaset_number>
+kubectl get replicaset
+
+#Deployment
+kubectl create deployment <deployment-name>
+kubectl rollout history deployment <deployment-name>
+kubect set image deployment/<name_of_deployment> <current_image>=<new_image>
+kubectl rollout undo deployment <nginx-deployment>
+kubectl rollout undo deployment <nginx-deployment> --to-revision=<revision_number>
+kubectl scale --replicas=3 deployment nginx-deployment
