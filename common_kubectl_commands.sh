@@ -23,6 +23,7 @@ kubectl delete pods --all
 #ReplicaSet
 kubectl scale replicaset <replicaset-name> --replicas=<replicaset_number>
 kubectl get replicaset
+kubectl delete rs <replicaset_name>
 
 #Deployment
 kubectl create deployment <deployment-name>
@@ -31,3 +32,8 @@ kubect set image deployment/<name_of_deployment> <current_image>=<new_image>
 kubectl rollout undo deployment <nginx-deployment>
 kubectl rollout undo deployment <nginx-deployment> --to-revision=<revision_number>
 kubectl scale --replicas=3 deployment nginx-deployment
+kubectl delete deployment <deployment_name>
+
+#PriorityClass
+kubectl get priorityclass
+kubectl create priorityclass low-priority high-priority --value=1000 --description="high priority"
