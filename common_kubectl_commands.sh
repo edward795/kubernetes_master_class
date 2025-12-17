@@ -37,3 +37,10 @@ kubectl delete deployment <deployment_name>
 #PriorityClass
 kubectl get priorityclass
 kubectl create priorityclass low-priority high-priority --value=1000 --description="high priority"
+
+#services
+kubectl create service clusterip <test-service> --tcp=<source-port>:<target-port>
+kubectl expose pod <pod_name> --name <service_name> --port <port_number> --target-port <target_port_number>
+
+#ingress
+kubectl create ingress <ingress-name> --class=nginx --rule="example.internal/*=example-service:80" --rule="kplabs.internal/*=kplabs-service:80"
