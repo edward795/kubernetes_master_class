@@ -44,3 +44,9 @@ kubectl expose pod <pod_name> --name <service_name> --port <port_number> --targe
 
 #ingress
 kubectl create ingress <ingress-name> --class=nginx --rule="example.internal/*=example-service:80" --rule="kplabs.internal/*=kplabs-service:80"
+
+#service accounts
+kubectl create serviceaccount <custom-token>
+kubectl create sa <cutsom-sa>
+kubectl get sa
+kubectl run-custom 
