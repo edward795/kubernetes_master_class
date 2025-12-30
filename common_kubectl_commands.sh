@@ -50,3 +50,18 @@ kubectl create serviceaccount <custom-token>
 kubectl create sa <cutsom-sa>
 kubectl get sa
 kubectl run-custom 
+
+#named ports 
+#step 1 : create a pod with a container port exposed eg:below
+kubectl run nginx --image=nginx --port=80 --dry-run=client -o yaml > named_port.yaml
+
+#edit & save a name to the spec : containerPort section of the yaml file & create a service with target-port as the named port
+kubectl expose pod nginx --name named-svc --port=80 --target-port=custom-http --type=NodePort
+
+#metrics api - you need to have metrics server configured
+kubectl top pods 
+kubectl top pods -A 
+
+#kubernetes hpa(horizontal pod autoscaler)
+kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=3
+kubectl get hpa
