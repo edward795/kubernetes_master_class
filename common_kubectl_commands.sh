@@ -65,3 +65,6 @@ kubectl top pods -A
 #kubernetes hpa(horizontal pod autoscaler)
 kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=3
 kubectl get hpa
+
+#gateway
+kubectl get gateway
